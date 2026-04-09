@@ -1046,7 +1046,8 @@ def main(success_websites: list[str] = None):
         time.sleep(1)
 
     # Save all collected records to a single merged file
-    output_filename = "startup_data_combined.json"
+    os.makedirs("./result", exist_ok=True)
+    output_filename = "./result/startup_data_combined.json"
     try:
         with open(output_filename, "w", encoding="utf-8") as f:
             json.dump(combined, f, indent=2, ensure_ascii=False)
